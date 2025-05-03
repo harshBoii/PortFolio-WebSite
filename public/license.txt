@@ -1,0 +1,11 @@
+Model Information:
+* title:	Ox head sculpture, Paris
+* source:	https://sketchfab.com/3d-models/ox-head-sculpture-paris-affae482da4c4a1e86d38a472fb1be69
+* author:	Antoine Dresen (https://sketchfab.com/adresen)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Ox head sculpture, Paris" (https://sketchfab.com/3d-models/ox-head-sculpture-paris-affae482da4c4a1e86d38a472fb1be69) by Antoine Dresen (https://sketchfab.com/adresen) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

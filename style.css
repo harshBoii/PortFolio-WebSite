@@ -1,0 +1,89 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.97;
+  z-index: -1;
+}
+
+canvas{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 5;
+  background-color: #3B2F2F;
+
+}
+
+.heading{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-30%);
+  font-size: 4rem;
+  color: #d4af37; /* Egyptian gold color */
+  font-family: 'Papyrus', 'MeroiticDemotic', 'Egyptian Hieroglyphs', fantasy;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.left{
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  font-family: 'Cinzel', serif;
+  color: #D4AF37;
+  font-size: 4.5vh;
+  z-index: 10;
+  color: #d4af37;
+  top: 50%;
+}
+
+.overlayer{
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+    z-index: 999;
+  background-image: url('https://thumbs.dreamstime.com/b/hieroglyphic-design-textured-background-often-found-ancient-egyptian-art-culture-elaborate-layers-hieroglyphics-351758861.jpg');
+  opacity: 0.75;
+    filter: blur(1.5px);
+    mix-blend-mode: overlay;
+  }
+  
+  
+  /* Custom cursor styles */
+  * {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23d4af37"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.236L17.618 8 12 11.764 6.382 8 12 4.236zM6 9.618l6 3.764v7.382l-6-3.764V9.618zm8 3.764l6-3.764v7.382l-6 3.764v-7.382z"/></svg>') 12 12, auto;
+  }
+
+  a:hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23f4cf57"><path d="M12 2L4 7v10l8 5 8-5V7l-8-5zm0 2.236L17.618 8 12 11.764 6.382 8 12 4.236zM6 9.618l6 3.764v7.382l-6-3.764V9.618zm8 3.764l6-3.764v7.382l-6 3.764v-7.382z"/></svg>') 12 12, pointer;
+  }
