@@ -12,7 +12,6 @@ import './style.css';
 const scene  = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-// Load HDRI environment map
 new RGBELoader().load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/bambanani_sunset_1k.hdr',function(texture)
 {
   const envmap = pmremGenerator.fromEquirectangular(texture).texture;
@@ -21,7 +20,7 @@ new RGBELoader().load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/bamb
   pmremGenerator.dispose();
 
 loader.load(
-  '/scene.gltf', // Updated path to the model in public directory
+  '/scene.gltf', 
   function (gltf) {
     model = gltf.scene;
     model.position.y = -11; // Move model down by 5 units
@@ -41,7 +40,7 @@ let model = null;
 
 camera.position.z = 30;
 camera.position.y = 0;
-camera.lookAt(0, 0, 0); // Look at the center of the scene
+camera.lookAt(0, 0, 0); 
 
 const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector('#canvas')
@@ -55,7 +54,6 @@ renderer.outputEncoding = THREE.sRGBEncoding;
 const pmremGenerator = new THREE.PMREMGenerator(renderer);
 pmremGenerator.compileEquirectangularShader();
 
-// Add OrbitControls
 
 // Post processing setup
 const composer = new EffectComposer(renderer);
@@ -110,7 +108,6 @@ window.addEventListener('mousemove', (e) => {
   });
 });
 
-// Initialize Typed.js
 const typed = new Typed('.left', {
   strings: ['A Creative Developer', 'A Data Scientist', 'A Tech Enthusiast'],
   typeSpeed: 50,
@@ -124,3 +121,27 @@ const typed = new Typed('.left', {
   fadeOutDelay: 500
 });
 
+
+const spinner = document.getElementById('spinner');
+
+const Loadmanager = new THREE.LoadingManager();
+
+Loadmanager.onLoad = () => {
+  spinner.style.display = 'none';
+};
+
+Loadmanager.onProgress = ( url, itemsLoaded, itemsTotal) => {
+  spinner.textContent = `Loading ${itemsLoaded} / ${itemsTotal}`;
+};
+
+
+
+const load = new GLTFLoader(Loadmanager);
+load.load(
+  '/models/myModel.glb',
+  (gltf) => {
+    scene.add(gltf.scene);
+  },
+  undefined, 
+  (err) => console.error('Model load error:', err)
+);
